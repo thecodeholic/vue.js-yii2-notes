@@ -9,10 +9,12 @@ namespace app\modules\api\controllers;
 
 
 use app\modules\api\models\LoginForm;
+use app\modules\api\resources\UserResource;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\filters\Cors;
 use yii\rest\Controller;
+use yii\web\UnauthorizedHttpException;
 
 /**
  * Class UserController
@@ -44,5 +46,19 @@ class UserController extends Controller
         return [
             'errors' => $model->errors
         ];
+    }
+
+    public function actionData()
+    {
+        $headers = Yii::$app->request->headers;
+        if (!isset($headers['Authorization'])){
+            throw new UnauthorizedHttpException();
+        }
+        $accessToken = explode(" ", $headers['Authorization'])[1];
+        $user = UserResource::findIdentityByAccessToken($accessToken);
+        if (!$user){
+            throw new UnauthorizedHttpException();
+        }
+        return $user;
     }
 }
