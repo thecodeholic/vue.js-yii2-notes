@@ -1,13 +1,13 @@
 <template>
-    <div class="login">
-        <h3>Login to create notes</h3>
-        <pre>{{errors}}</pre>
-        <form @submit.prevent="login" action="">
-            <input type="text" v-model="form.username" placeholder="Your username"><br>
-            <input type="password" v-model="form.password" placeholder="Your password"><br>
-            <button>Login</button>
-        </form>
-    </div>
+  <div class="login">
+    <h3>Login to create notes</h3>
+    <pre>{{errors}}</pre>
+    <form @submit.prevent="login" action="">
+      <input type="text" v-model="form.username" placeholder="Your username"><br>
+      <input type="password" v-model="form.password" placeholder="Your password"><br>
+      <button>Login</button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -36,6 +36,8 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  .login {
+    background-color: ;
+  }
 </style>
