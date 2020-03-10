@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="default-layout">
     <navbar :user="user"/>
     <router-view/>
   </div>
@@ -23,6 +23,8 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  #default-layout{
+    padding-top: 50px;
+  }
 </style>

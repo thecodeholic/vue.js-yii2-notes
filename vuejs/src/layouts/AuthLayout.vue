@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="auth-layout">
     <router-view />
   </div>
 </template>
@@ -10,6 +10,8 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  #auth-layout{
+    padding: 50px;
+  }
 </style>
