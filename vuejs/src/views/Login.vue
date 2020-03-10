@@ -10,6 +10,7 @@
       <input type="text" v-model="form.username" placeholder="Your username"><br>
       <input type="password" v-model="form.password" placeholder="Your password"><br>
       <button>Login</button>
+      <router-link to="/register" style="float: right">Register</router-link>
     </form>
   </div>
 </template>
@@ -87,10 +88,10 @@
 
   .errors{
     margin-bottom: 15px;
-    font-size: 80%;
     padding: 10px 15px;
     color: #fff;
     background-color: #ff6969;
+    font-size: 12px;
     p{
       margin: 0;
     }

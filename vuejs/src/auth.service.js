@@ -5,11 +5,11 @@ import router from "./router";
  * Created by TheCodeholic on 3/7/2020.
  */
 const authService = {
-  currentUser : null,
-  isloggedIn(){
+  currentUser: null,
+  isloggedIn() {
     return !!localStorage.getItem('ACCESS_TOKEN')
   },
-  getToken(){
+  getToken() {
     return localStorage.getItem('ACCESS_TOKEN')
   },
   async login(formData) {
@@ -21,7 +21,7 @@ const authService = {
       return {
         success: true
       }
-    } catch(e){
+    } catch (e) {
       console.log(e.response);
       return {
         success: false,
@@ -29,11 +29,28 @@ const authService = {
       }
     }
   },
-  logout(){
+  async register(formData) {
+    try {
+      const {status, data} = await httpClient.post('user/register', formData);
+      if (status === 200) {
+        localStorage.setItem('ACCESS_TOKEN', data.access_token)
+      }
+      return {
+        success: true
+      }
+    } catch (e) {
+      console.log(e.response);
+      return {
+        success: false,
+        errors: e.response.data.errors
+      }
+    }
+  },
+  logout() {
     localStorage.removeItem('ACCESS_TOKEN');
     router.push('/login');
   },
-  async getUser(){
+  async getUser() {
     if (!this.currentUser) {
       const {status, data} = await httpClient.get('/user/data');
       if (status === 200) {
