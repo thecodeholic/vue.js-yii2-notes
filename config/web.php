@@ -9,7 +9,7 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
@@ -53,13 +53,10 @@ $config = [
             'rules' => [
                 [
                     'class' => \yii\rest\UrlRule::class,
-                    'pluralize' => false,
-                    'controller' => ['api/notes']
+                    'pluralize' => true,
+                    'controller' => ['api/note'],
                 ]
             ],
-//            'extraPatterns' => [
-//                'OPTIONS <action>'
-//            ]
         ],
 
     ],

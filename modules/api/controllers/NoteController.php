@@ -19,24 +19,30 @@ use yii\rest\ActiveController;
  * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
  * @package app\modules\api\controllers
  */
-class NotesController extends ActiveController
+class NoteController extends ActiveController
 {
     public $modelClass = NoteResource::class;
 
     public function behaviors()
     {
         $behaviors = parent::behaviors();
-
+        // Options 1: Authenticator works on every action except options
+//        $behaviors['authenticator']['except'] = ['options'];
+//        $behaviors['authenticator']['authMethods'] = [
+//            HttpBearerAuth::class
+//        ];
+//        $behaviors['cors'] = [
+//            'class' => Cors::class
+//        ];
+        // Options 2: Remove authenticator, Add Cors and then Add authenticator
         $auth = $behaviors['authenticator'];
         $auth['authMethods'] = [
             HttpBearerAuth::class
         ];
         unset($behaviors['authenticator']);
-
         $behaviors['cors'] = [
             'class' => Cors::class
         ];
-//        $auth['except'] = ['options'];
         $behaviors['authenticator'] = $auth;
 
         return $behaviors;
