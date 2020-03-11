@@ -37,9 +37,6 @@
     transition: font-weight 0.3s;
     a{
       color: #FFF;
-      &:hover{
-        font-weight: bold;
-      }
     }
   }
 </style>
