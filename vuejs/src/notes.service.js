@@ -8,7 +8,7 @@ const notesService = {
     return httpClient.post('notes', note)
   },
   get() {
-    return httpClient.get('notes')
+    return httpClient.get('notes?sort=-created_at')
   },
   update(note) {
     return httpClient.put(`notes/${note.id}`, note)
