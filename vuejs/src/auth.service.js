@@ -51,11 +51,16 @@ const authService = {
     router.push('/login');
   },
   async getUser() {
-    if (!this.currentUser) {
-      const {status, data} = await httpClient.get('/user/data');
-      if (status === 200) {
-        this.currentUser = data;
+    try {
+      if (!this.currentUser) {
+        const {status, data} = await httpClient.get('/user/data');
+        if (status === 200) {
+          this.currentUser = data;
+        }
       }
+
+    } catch (e) {
+      return null;
     }
 
     return this.currentUser;
