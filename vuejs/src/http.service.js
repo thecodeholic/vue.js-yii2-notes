@@ -3,8 +3,9 @@ import authService from "./auth.service";
 import router from './router';
 
 /** Default config for axios instance */
+const API_ENDPOINT = process.env.VUE_APP_API_ENDPOINT || 'http://localhost:8080/';
 let config = {
-  baseURL: `http://localhost:8080/api/`
+  baseURL: `${API_ENDPOINT}api/`
 };
 
 /** Creating the instance for axios */
