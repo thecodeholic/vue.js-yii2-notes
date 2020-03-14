@@ -12,7 +12,7 @@
 <script>
   import AddNewButton from "./AddNewButton";
   import Note from "./Note";
-  import notesService from "../notes.service";
+  import notesService from "../services/notes.service";
 
   export default {
     name: "Notes",

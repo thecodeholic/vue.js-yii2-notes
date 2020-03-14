@@ -11,8 +11,6 @@ use yii\db\ActiveRecord;
  * @property string $username
  * @property string $password_hash
  * @property string $access_token
- * @property integer $created_at
- * @property integer $updated_at
  *
  * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
  * @package app\models
@@ -22,13 +20,6 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     public static function tableName()
     {
         return '{{%users}}';
-    }
-
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::class
-        ];
     }
 
     /**

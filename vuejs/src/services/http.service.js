@@ -1,6 +1,6 @@
 import axios from 'axios';
 import authService from "./auth.service";
-import router from './router';
+import router from '../router';
 
 /** Default config for axios instance */
 let config = {
