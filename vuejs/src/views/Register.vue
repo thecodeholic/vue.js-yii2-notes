@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import authService from "../auth.service";
+  import authService from "../services/auth.service";
 
   export default {
     name: "Register",

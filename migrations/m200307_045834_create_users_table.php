@@ -17,8 +17,6 @@ class m200307_045834_create_users_table extends Migration
             'username' => $this->string(255),
             'password_hash' => $this->string(512),
             'access_token' => $this->string(1024),
-            'created_at' => $this->integer(11),
-            'updated_at' => $this->integer(11),
         ]);
     }
 

@@ -1,5 +1,5 @@
 import {httpClient} from "./http.service";
-import router from "./router";
+import router from "../router";
 
 /**
  * Created by TheCodeholic on 3/7/2020.
