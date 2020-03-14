@@ -1,4 +1,4 @@
-import {httpClient} from "./http.service";
+import httpClient from "./http.service";
 
 /**
  * Created by TheCodeholic on 3/7/2020.

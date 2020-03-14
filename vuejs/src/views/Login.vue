@@ -31,11 +31,9 @@
     },
     methods: {
       async login() {
-        console.log(this.form);
-
         const {success, errors} = await authService.login(this.form);
         if (success) {
-          this.$router.push({name: 'Home'});
+          this.$router.push({name: 'home'});
         } else {
           this.errors = errors;
         }

@@ -35,7 +35,8 @@
     padding: 0 15px;
     text-align: right;
     transition: font-weight 0.3s;
-    a{
+
+    a {
       color: #FFF;
     }
   }

@@ -69,7 +69,7 @@
         }
       }
 
-      .link{
+      .link {
         font-size: 80%;
         float: right;
       }

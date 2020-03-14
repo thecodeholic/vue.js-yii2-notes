@@ -1,4 +1,4 @@
-import {httpClient} from "./http.service";
+import httpClient from "./http.service";
 import router from "../router";
 
 /**
@@ -6,7 +6,7 @@ import router from "../router";
  */
 const authService = {
   currentUser: null,
-  isloggedIn() {
+  isLoggedIn() {
     return !!localStorage.getItem('ACCESS_TOKEN')
   },
   getToken() {

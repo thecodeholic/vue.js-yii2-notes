@@ -29,11 +29,11 @@ httpClient.interceptors.response.use(
   },
   error => {
     if (error.response.status === 401){
-      router.push('/login')
+      router.push({name: 'login'})
     }
     /** TODO: Do something with response error */
     return Promise.reject(error);
   }
 );
 
-export { httpClient };
+export default httpClient;

@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Login from "../views/Login";
-import authService from "../services/auth.service";
 import DefaultLayout from "../layouts/DefaultLayout";
 import AuthLayout from "../layouts/AuthLayout";
+import Login from "../views/Login";
 import Register from "../views/Register";
+import authService from "../services/auth.service";
 
 Vue.use(VueRouter)
 
@@ -18,7 +18,7 @@ const routes = [
     children: [
       {
         path: 'home',
-        name: 'Home',
+        name: 'home',
         component: Home
       }
     ]
@@ -30,14 +30,12 @@ const routes = [
     children: [
       {
         path: 'login',
-        alias: 'login',
-        name: 'Login',
+        name: 'login',
         component: Login
       },
       {
         path: 'register',
-        alias: 'register',
-        name: 'Register',
+        name: 'register',
         component: Register
       }
     ]
@@ -49,20 +47,20 @@ const routes = [
   {
     path: '/register',
     redirect: '/auth/register'
-  }
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
+
 router.beforeEach((to, from, next) => {
-  console.log(to, from);
-  if (to.meta.auth && !authService.isloggedIn()) {
-    next({name: 'Login'})
-  } else if (to.name === 'Login' && authService.isloggedIn()) {
-    next({name: 'Home'})
+  if (to.name === 'home' && !authService.isLoggedIn()) {
+    next({name: 'login'})
+  } else if (authService.isLoggedIn() && to.name !== 'home'){
+    next({name: 'home'})
   } else {
     next();
   }
