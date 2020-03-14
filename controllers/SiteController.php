@@ -19,6 +19,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->redirect('https://notes.thecodeholic.com');
+        return $this->render('index');
     }
 }
