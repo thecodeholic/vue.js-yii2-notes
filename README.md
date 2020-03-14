@@ -59,4 +59,4 @@ return [
 **NOTES:**
 - This application was created while recording the following Youtube tutorial
 - If you find it helpful, Give it a star and leave a thumbs up on Youtube Video
-- If you loved it.
+- If you loved it support me by subscribing on my Youtube channel.
