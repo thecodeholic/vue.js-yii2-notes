@@ -57,6 +57,6 @@ return [
 ```
 
 **NOTES:**
-- This application was created while recording [the following Youtube tutorial)(https://youtu.be/7vrctmDQYW4)
+- This application was created while recording [the following Youtube tutorial](https://youtu.be/7vrctmDQYW4)
 - If you find it helpful, Give it a star and leave a thumbs up on Youtube Video
 - If you loved it, support me by subscribing on my [Youtube channel](http://youtube.com/TheCodeholic).
